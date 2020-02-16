@@ -1,68 +1,315 @@
-2020-02-16T08:43:40.352Z - normal: Load ~/.CocosCreator/settings.json
-2020-02-16T08:43:40.457Z - normal: Initializing Asset Database
-2020-02-16T08:43:40.471Z - normal: checking language setting...
-2020-02-16T08:43:40.471Z - normal: Language: zh
-2020-02-16T08:43:42.388Z - success: preview server running at http://localhost:7456
-2020-02-16T08:43:42.564Z - success: protocol editor-framework registered
-2020-02-16T08:43:42.564Z - success: protocol app registered
-2020-02-16T08:43:42.564Z - success: protocol theme registered
-2020-02-16T08:43:42.565Z - success: protocol packages registered
-2020-02-16T08:43:42.565Z - success: protocol uuid registerred
-2020-02-16T08:43:42.565Z - success: protocol db registerred
-2020-02-16T08:43:42.566Z - success: protocol thumbnail registerred
-2020-02-16T08:43:42.566Z - success: protocol unpack registerred
-2020-02-16T08:43:42.566Z - success: protocol disable-commonjs registerred
-2020-02-16T08:43:42.777Z - normal: connected!
-2020-02-16T08:43:42.779Z - normal: Check project /Users/georgezeng/work/git/private/game/stms/stms.game.ui
-2020-02-16T08:43:42.780Z - normal: Initializing project /Users/georgezeng/work/git/private/game/stms/stms.game.ui
-2020-02-16T08:43:42.840Z - success: adapters loaded
-2020-02-16T08:43:42.855Z - success: asset-db-debugger loaded
-2020-02-16T08:43:43.096Z - success: fb-audience-network loaded
-2020-02-16T08:43:43.148Z - success: fb-live-stream loaded
-2020-02-16T08:43:43.158Z - success: google-play-instant loaded
-2020-02-16T08:43:43.170Z - success: huawei-runtime loaded
-2020-02-16T08:43:43.177Z - success: jkw-adapter loaded
-2020-02-16T08:43:43.178Z - success: jsb-adapter loaded
-2020-02-16T08:43:43.192Z - success: oppo-runtime loaded
-2020-02-16T08:43:43.212Z - success: package-manager loaded
-2020-02-16T08:43:43.213Z - success: qtt-adapter loaded
-2020-02-16T08:43:43.220Z - success: runtime-dev-tools loaded
-2020-02-16T08:43:43.238Z - success: sdkbox loaded
-2020-02-16T08:43:43.254Z - success: ui-kit-preview-extra loaded
-2020-02-16T08:43:43.271Z - success: ui-kit-preview loaded
-2020-02-16T08:43:43.290Z - success: vivo-runtime loaded
-2020-02-16T08:43:43.297Z - success: alipay-minigame loaded
-2020-02-16T08:43:43.540Z - success: assets loaded
-2020-02-16T08:43:43.545Z - success: baidugame-opendata loaded
-2020-02-16T08:43:43.549Z - success: baidugame loaded
-2020-02-16T08:43:43.575Z - success: builder loaded
-2020-02-16T08:43:44.035Z - success: cocos-services loaded
-2020-02-16T08:43:44.061Z - success: console loaded
-2020-02-16T08:43:44.093Z - success: fb-instant-games loaded
-2020-02-16T08:43:44.104Z - success: game-window loaded
-2020-02-16T08:43:44.108Z - success: google-instant-games loaded
-2020-02-16T08:43:44.123Z - success: hierarchy loaded
-2020-02-16T08:43:44.139Z - success: inspector loaded
-2020-02-16T08:43:45.121Z - success: cpk-publish loaded
-2020-02-16T08:43:45.161Z - success: keystore loaded
-2020-02-16T08:43:45.280Z - success: node-library loaded
-2020-02-16T08:43:45.293Z - success: open-recent-items loaded
-2020-02-16T08:43:45.297Z - success: package-asset loaded
-2020-02-16T08:43:45.310Z - success: preferences loaded
-2020-02-16T08:43:45.328Z - success: project-exporter loaded
-2020-02-16T08:43:45.361Z - success: project-importer loaded
-2020-02-16T08:43:45.376Z - success: project-settings loaded
-2020-02-16T08:43:45.421Z - success: qtt-runtime loaded
-2020-02-16T08:43:45.441Z - success: scene loaded
-2020-02-16T08:43:45.445Z - success: simulator-debugger loaded
-2020-02-16T08:43:45.446Z - success: sprite-editor loaded
-2020-02-16T08:43:45.461Z - success: store loaded
-2020-02-16T08:43:45.472Z - success: timeline loaded
-2020-02-16T08:43:45.480Z - success: wechatgame-opendata loaded
-2020-02-16T08:43:45.491Z - success: wechatgame loaded
-2020-02-16T08:43:45.499Z - success: xiaomi-runtime loaded
-2020-02-16T08:43:47.769Z - normal: Initializing Cocos2d
-2020-02-16T08:43:48.503Z - normal: Initializing engine extends
-2020-02-16T08:43:49.284Z - normal: Loading packages
-2020-02-16T08:43:49.288Z - normal: Watching packages
-2020-02-16T08:43:49.383Z - normal: Run Application
+2020-02-16T12:12:35.074Z - normal: Load ~/.CocosCreator/settings.json
+2020-02-16T12:12:35.165Z - normal: Initializing Asset Database
+2020-02-16T12:12:35.168Z - normal: checking language setting...
+2020-02-16T12:12:35.168Z - normal: Language: zh
+2020-02-16T12:12:36.042Z - success: preview server running at http://localhost:7456
+2020-02-16T12:12:36.075Z - success: protocol editor-framework registered
+2020-02-16T12:12:36.075Z - success: protocol app registered
+2020-02-16T12:12:36.075Z - success: protocol theme registered
+2020-02-16T12:12:36.076Z - success: protocol packages registered
+2020-02-16T12:12:36.076Z - success: protocol uuid registerred
+2020-02-16T12:12:36.076Z - success: protocol db registerred
+2020-02-16T12:12:36.076Z - success: protocol thumbnail registerred
+2020-02-16T12:12:36.077Z - success: protocol unpack registerred
+2020-02-16T12:12:36.077Z - success: protocol disable-commonjs registerred
+2020-02-16T12:12:36.257Z - normal: connected!
+2020-02-16T12:12:36.258Z - normal: Check project /Users/georgezeng/work/git/private/game/stms/stms.game.ui
+2020-02-16T12:12:36.259Z - normal: Initializing project /Users/georgezeng/work/git/private/game/stms/stms.game.ui
+2020-02-16T12:12:36.292Z - success: adapters loaded
+2020-02-16T12:12:36.298Z - success: asset-db-debugger loaded
+2020-02-16T12:12:36.392Z - success: fb-audience-network loaded
+2020-02-16T12:12:36.428Z - success: fb-live-stream loaded
+2020-02-16T12:12:36.430Z - success: google-play-instant loaded
+2020-02-16T12:12:36.437Z - success: huawei-runtime loaded
+2020-02-16T12:12:36.442Z - success: jkw-adapter loaded
+2020-02-16T12:12:36.443Z - success: jsb-adapter loaded
+2020-02-16T12:12:36.448Z - success: oppo-runtime loaded
+2020-02-16T12:12:36.458Z - success: package-manager loaded
+2020-02-16T12:12:36.460Z - success: qtt-adapter loaded
+2020-02-16T12:12:36.463Z - success: runtime-dev-tools loaded
+2020-02-16T12:12:36.471Z - success: sdkbox loaded
+2020-02-16T12:12:36.475Z - success: ui-kit-preview-extra loaded
+2020-02-16T12:12:36.481Z - success: ui-kit-preview loaded
+2020-02-16T12:12:36.492Z - success: vivo-runtime loaded
+2020-02-16T12:12:36.495Z - success: alipay-minigame loaded
+2020-02-16T12:12:36.596Z - success: assets loaded
+2020-02-16T12:12:36.600Z - success: baidugame-opendata loaded
+2020-02-16T12:12:36.603Z - success: baidugame loaded
+2020-02-16T12:12:36.611Z - success: builder loaded
+2020-02-16T12:12:36.852Z - success: cocos-services loaded
+2020-02-16T12:12:36.859Z - success: console loaded
+2020-02-16T12:12:36.875Z - success: fb-instant-games loaded
+2020-02-16T12:12:36.975Z - success: game-window loaded
+2020-02-16T12:12:36.977Z - success: google-instant-games loaded
+2020-02-16T12:12:36.989Z - success: hierarchy loaded
+2020-02-16T12:12:36.994Z - success: inspector loaded
+2020-02-16T12:12:37.501Z - success: cpk-publish loaded
+2020-02-16T12:12:37.505Z - success: keystore loaded
+2020-02-16T12:12:37.516Z - success: node-library loaded
+2020-02-16T12:12:37.520Z - success: open-recent-items loaded
+2020-02-16T12:12:37.526Z - success: package-asset loaded
+2020-02-16T12:12:37.537Z - success: preferences loaded
+2020-02-16T12:12:37.540Z - success: project-exporter loaded
+2020-02-16T12:12:37.549Z - success: project-importer loaded
+2020-02-16T12:12:37.555Z - success: project-settings loaded
+2020-02-16T12:12:37.674Z - success: qtt-runtime loaded
+2020-02-16T12:12:37.682Z - success: scene loaded
+2020-02-16T12:12:37.684Z - success: simulator-debugger loaded
+2020-02-16T12:12:37.684Z - success: sprite-editor loaded
+2020-02-16T12:12:37.690Z - success: store loaded
+2020-02-16T12:12:37.695Z - success: timeline loaded
+2020-02-16T12:12:37.699Z - success: wechatgame-opendata loaded
+2020-02-16T12:12:37.704Z - success: wechatgame loaded
+2020-02-16T12:12:37.709Z - success: xiaomi-runtime loaded
+2020-02-16T12:12:39.512Z - normal: Initializing Cocos2d
+2020-02-16T12:12:40.177Z - normal: Initializing engine extends
+2020-02-16T12:12:42.391Z - info: Cocos Service load base data!
+2020-02-16T12:12:42.392Z - normal: Loading packages
+2020-02-16T12:12:42.401Z - normal: Watching packages
+2020-02-16T12:12:42.619Z - normal: Run Application
+2020-02-16T12:32:23.392Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": ""
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "buildPath": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build",
+  "debug": false,
+  "dest": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": ""
+  },
+  "mac": {
+    "packageName": ""
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "scenes": [
+    "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+    "25e7a3be-38b5-4ff0-a441-211dea43b7b7",
+    "6f6a4ea9-e85a-4618-9e1e-53213ef9d5ac"
+  ],
+  "sourceMaps": false,
+  "startScene": "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+  "template": "link",
+  "title": "stms",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "landscape",
+  "win32": {},
+  "xxteaKey": "8e39808a-4326-4f",
+  "zipCompressJs": true,
+  "project": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui",
+  "projectName": "stms",
+  "debugBuildWorker": false
+}
+2020-02-16T12:32:23.394Z - normal: Building /Users/georgezeng/work/git/private/game/stms/stms.game.ui
+2020-02-16T12:32:23.394Z - normal: Destination /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile
+2020-02-16T12:32:23.472Z - normal: Delete /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/subpackages/**/*,/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/**/*
+2020-02-16T12:32:25.133Z - normal: Start building assets
+2020-02-16T12:32:25.133Z - normal: Start spawn build-worker
+2020-02-16T12:32:25.780Z - normal: Finish spawn build-worker
+2020-02-16T12:32:25.780Z - normal: Start init build-worker
+2020-02-16T12:32:28.317Z - normal: Finish init build-worker
+2020-02-16T12:32:28.317Z - normal: Start build-assets in worker
+2020-02-16T12:32:29.189Z - normal: Finish build-assets in worker
+2020-02-16T12:32:29.192Z - normal: Finish building assets
+2020-02-16T12:32:29.213Z - normal: Start building plugin scripts
+2020-02-16T12:32:31.131Z - normal: Finish building plugin scripts
+2020-02-16T12:32:31.138Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-02-16T12:32:31.146Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template/index.html
+2020-02-16T12:32:31.165Z - normal: Built to "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile" successfully
+2020-02-16T12:32:53.098Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": ""
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "buildPath": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build",
+  "debug": false,
+  "dest": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": ""
+  },
+  "mac": {
+    "packageName": ""
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "scenes": [
+    "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+    "25e7a3be-38b5-4ff0-a441-211dea43b7b7",
+    "6f6a4ea9-e85a-4618-9e1e-53213ef9d5ac"
+  ],
+  "sourceMaps": false,
+  "startScene": "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+  "template": "link",
+  "title": "stms",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "win32": {},
+  "xxteaKey": "8e39808a-4326-4f",
+  "zipCompressJs": true,
+  "project": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui",
+  "projectName": "stms",
+  "debugBuildWorker": false
+}
+2020-02-16T12:32:53.099Z - normal: Building /Users/georgezeng/work/git/private/game/stms/stms.game.ui
+2020-02-16T12:32:53.099Z - normal: Destination /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile
+2020-02-16T12:32:53.099Z - normal: Delete /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/subpackages/**/*,/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/**/*
+2020-02-16T12:32:54.366Z - normal: Start building assets
+2020-02-16T12:32:54.366Z - normal: Start spawn build-worker
+2020-02-16T12:32:54.831Z - normal: Finish spawn build-worker
+2020-02-16T12:32:54.831Z - normal: Start init build-worker
+2020-02-16T12:32:56.225Z - normal: Finish init build-worker
+2020-02-16T12:32:56.226Z - normal: Start build-assets in worker
+2020-02-16T12:32:56.730Z - normal: Finish build-assets in worker
+2020-02-16T12:32:56.732Z - normal: Finish building assets
+2020-02-16T12:32:56.756Z - normal: Start building plugin scripts
+2020-02-16T12:32:57.885Z - normal: Finish building plugin scripts
+2020-02-16T12:32:57.890Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-02-16T12:32:57.893Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template/index.html
+2020-02-16T12:32:57.904Z - normal: Built to "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile" successfully
+2020-02-16T13:17:14.859Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": ""
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "buildPath": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build",
+  "debug": false,
+  "dest": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": ""
+  },
+  "mac": {
+    "packageName": ""
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "scenes": [
+    "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+    "25e7a3be-38b5-4ff0-a441-211dea43b7b7",
+    "6f6a4ea9-e85a-4618-9e1e-53213ef9d5ac"
+  ],
+  "sourceMaps": false,
+  "startScene": "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+  "template": "link",
+  "title": "stms",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "win32": {},
+  "xxteaKey": "8e39808a-4326-4f",
+  "zipCompressJs": true,
+  "project": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui",
+  "projectName": "stms",
+  "debugBuildWorker": false
+}
+2020-02-16T13:17:14.860Z - normal: Building /Users/georgezeng/work/git/private/game/stms/stms.game.ui
+2020-02-16T13:17:14.860Z - normal: Destination /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile
+2020-02-16T13:17:14.861Z - normal: Delete /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/subpackages/**/*,/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/**/*
+2020-02-16T13:17:31.729Z - normal: Start building assets
+2020-02-16T13:17:31.730Z - normal: Start spawn build-worker
+2020-02-16T13:17:36.692Z - normal: Finish spawn build-worker
+2020-02-16T13:17:36.693Z - normal: Start init build-worker
+2020-02-16T13:17:46.184Z - normal: Finish init build-worker
+2020-02-16T13:17:46.186Z - normal: Start build-assets in worker
+2020-02-16T13:17:48.260Z - normal: Finish build-assets in worker
+2020-02-16T13:17:48.268Z - normal: Finish building assets
+2020-02-16T13:17:48.288Z - normal: Start building plugin scripts
+2020-02-16T13:17:50.757Z - normal: Finish building plugin scripts
+2020-02-16T13:17:50.765Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-02-16T13:17:50.784Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template/index.html
+2020-02-16T13:17:50.817Z - normal: Built to "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile" successfully

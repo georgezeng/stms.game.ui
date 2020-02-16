@@ -38,8 +38,9 @@ cc.Class({
 
     onLoad () {
     	cc.director.setClearColor(cc.color(4, 148, 44, 1));
-		common.setParameter("serverEndPoint", "http://localhost:8081/");
-		// common.setParameter("serverEndPoint", "/");
+		// common.setParameter("serverEndPoint", "http://localhost:8081/");
+		common.setParameter('autoStart', 'false');
+		common.setParameter("serverEndPoint", "/");
     },
 
     start () {

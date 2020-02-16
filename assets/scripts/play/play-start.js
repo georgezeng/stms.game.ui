@@ -31,6 +31,10 @@ cc.Class({
 		exitBtn: {
 			default: null,
 			type: cc.Button
+		},
+		startBtn: {
+			default: null,
+			type: cc.Button
 		}
     },
 
@@ -39,6 +43,16 @@ cc.Class({
     onLoad () {
 		let _this = this;
 		this.node.on('click', function ( button ) {
+			startGame();
+		});
+		setInterval(function() {
+			if (common.getValue('autoStart') == 'true') {
+				common.setParameter('autoStart', 'false');
+				startGame();
+			}
+		}, 1000);
+		
+		function startGame() {
 			let serverUrl = common.getValue("serverEndPoint")
 			let nickname = common.getValue("nickname")
 			let roomNumber = common.getValue("roomNumber")
@@ -47,11 +61,11 @@ cc.Class({
 					alert(data.msgs[0]);
 				} else {
 					common.setParameter('calculated', 'false');
-					button.interactable = false;
+					_this.startBtn.interactable = false;
 					_this.exitBtn.interactable = false;
 				}
 			});
-		});
+		}
 	},
 
     start () {

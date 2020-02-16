@@ -138,7 +138,15 @@ cc.Class({
 					} 
 					let isCurrentPlayer = player.nickname == _this.nickname;
 					if (isCurrentPlayer && player.status == 'Locked' && player.times != null) {
-						labels[2].string = (player.times.priority != 10 ? player.times.name : (player.points + '点'));
+						switch(player.times.priority) {
+							case 8: {
+								switch(player.times.value) {
+									case 1: labels[2].string = player.points + '点'; break;
+									default: labels[2].string = player.times.name + player.points;
+								}
+							} break;
+							default: labels[2].string = player.times.name
+						}
 					} else {
 						labels[2].string = '';
 					}
@@ -179,7 +187,15 @@ cc.Class({
 							let labels = playerNode.getComponentsInChildren(cc.Label);
 							let sprites = playerNode.getComponentsInChildren(cc.Sprite);
 							if (player.times != null) {
-								labels[2].string = (player.times.priority != 10 ? player.times.name : (player.points + '点'));
+								switch(player.times.priority) {
+									case 8: {
+										switch(player.times.value) {
+											case 1: labels[2].string = player.points + '点'; break;
+											default: labels[2].string = player.times.name + player.points;
+										}
+									} break;
+									default: labels[2].string = player.times.name
+								}
 							}
 							sprites.map((sprite, index) => {
 								let card = player.cards[index];
@@ -194,7 +210,15 @@ cc.Class({
 					if (calculated == 'false') {
 						common.setParameter('calculated', 'true');
 						if (_this.isHost == 'true') {
-							$.get(_this.serverUrl + "calResult/" + _this.roomNumber + "/" + _this.nickname);
+							$.get(_this.serverUrl + "calResult/" + _this.roomNumber + "/" + _this.nickname, function(data) {
+								if (data.code == 0) {
+									setTimeout(function() {
+										if (data.data == 'Calculated') {
+											common.setParameter('autoStart', 'true');
+										}
+									}, 10 * 1000);
+								}
+							});
 						}
 					}
 				}

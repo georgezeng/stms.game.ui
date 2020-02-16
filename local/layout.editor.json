@@ -103,7 +103,9 @@
         "inspector",
         "cocos-services"
       ]
-    }
+    },
+    "window-1581856335648": {},
+    "worker": {}
   },
   "panels": {
     "sprite-editor": {
