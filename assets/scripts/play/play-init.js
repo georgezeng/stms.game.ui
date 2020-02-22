@@ -144,8 +144,12 @@ cc.Class({
 					}
 					let labels = playerNode.getComponentsInChildren(cc.Label);
 					let sprites = playerNode.getComponentsInChildren(cc.Sprite);
-					
 					let isCurrentPlayer = player.nickname == _this.nickname;
+					if (room.stage && room.stage.currentTurn == player.index && isPlaying) {
+						sprites[0].node.opacity = 255;
+					} else {
+						sprites[0].node.opacity = 0;
+					}
 					if (isCurrentPlayer && player.status == 'Locked' && player.times != null) {
 						switch(player.times.priority) {
 							case 8: {
@@ -197,6 +201,7 @@ cc.Class({
 						let playerNode = playerNodes[i];
 						let labels = playerNode.getComponentsInChildren(cc.Label);
 						let sprites = playerNode.getComponentsInChildren(cc.Sprite);
+						sprites[0].node.opacity = 0;
 						if (player.status == 'Locked') {
 							if (player.times != null) {
 								switch(player.times.priority) {
@@ -220,12 +225,14 @@ cc.Class({
 								}
 							}
 							sprites.map((sprite, index) => {
-								sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
-								let card = player.cards[index];
-								if (card) {
-									common.loadCardImg(sprite, card.name);
-									if (card.index == room.stage.extraGhost.index) {
-										sprite.node.getComponentInChildren(cc.Label).node.opacity = 255;
+								if (index > 0) {
+									sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
+									let card = player.cards[index - 1];
+									if (card) {
+										common.loadCardImg(sprite, card.name);
+										if (card.index == room.stage.extraGhost.index) {
+											sprite.node.getComponentInChildren(cc.Label).node.opacity = 255;
+										}
 									}
 								}
 							});
@@ -233,8 +240,10 @@ cc.Class({
 							labels[1].string = '得分: ' + player.amount;
 							labels[2].string = '已退出';
 							sprites.map((sprite, index) => {
-								common.loadCardImg(sprite, 'back');
-								sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
+								if (index > 0) {
+									common.loadCardImg(sprite, 'back');
+									sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
+								}
 							});
 						}
 					}
@@ -265,32 +274,36 @@ cc.Class({
 							labels[1].string = '得分: ' + player.amount;
 							labels[2].string = '已退出';
 							sprites.map((sprite, index) => {
-								common.loadCardImg(sprite, 'back');
-								sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
+								if (index > 0) {
+									common.loadCardImg(sprite, 'back');
+									sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
+								}
 							});
 						} else {
 							let isCurrentPlayer = player.nickname == _this.nickname;
 							sprites.map((sprite, index) => {
-								sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
-								let card = player.cards[index];
-								if (card) {
-									if (isCurrentPlayer) {
-										if (index == 2 && common.getValue('flipped') == 'false') {
-											common.loadCardImg(sprite, 'back');
-											common.loadCardImg(_this.flipCard, card.name);
-											_this.flipCard.node.active = true;
-											_this.flipBackCard.node.active = true;
-										} else {
-											common.loadCardImg(sprite, card.name);
-											if (card.index == room.stage.extraGhost.index) {
-												sprite.node.getComponentInChildren(cc.Label).node.opacity = 255;
+								if (index > 0) {
+									sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
+									let card = player.cards[index - 1];
+									if (card) {
+										if (isCurrentPlayer) {
+											if (index == 3 && common.getValue('flipped') == 'false') {
+												common.loadCardImg(sprite, 'back');
+												common.loadCardImg(_this.flipCard, card.name);
+												_this.flipCard.node.active = true;
+												_this.flipBackCard.node.active = true;
+											} else {
+												common.loadCardImg(sprite, card.name);
+												if (card.index == room.stage.extraGhost.index) {
+													sprite.node.getComponentInChildren(cc.Label).node.opacity = 255;
+												}
 											}
+										} else {
+											common.loadCardImg(sprite, 'back');
 										}
 									} else {
-										common.loadCardImg(sprite, 'back');
+										sprite.node.opacity = 0;
 									}
-								} else {
-									sprite.node.opacity = 0;
 								}
 							});
 						}

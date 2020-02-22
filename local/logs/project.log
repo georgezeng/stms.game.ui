@@ -923,3 +923,78 @@
 2020-02-22T10:04:04.973Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
 2020-02-22T10:04:04.988Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template/index.html
 2020-02-22T10:04:05.006Z - normal: Built to "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile" successfully
+2020-02-22T10:51:52.060Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": ""
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "buildPath": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build",
+  "debug": false,
+  "dest": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": ""
+  },
+  "mac": {
+    "packageName": ""
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "scenes": [
+    "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+    "25e7a3be-38b5-4ff0-a441-211dea43b7b7",
+    "6f6a4ea9-e85a-4618-9e1e-53213ef9d5ac"
+  ],
+  "sourceMaps": false,
+  "startScene": "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+  "template": "link",
+  "title": "stms",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "landscape",
+  "win32": {},
+  "xxteaKey": "8e39808a-4326-4f",
+  "zipCompressJs": true,
+  "project": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui",
+  "projectName": "stms",
+  "debugBuildWorker": false
+}
+2020-02-22T10:51:52.061Z - normal: Building /Users/georgezeng/work/git/private/game/stms/stms.game.ui
+2020-02-22T10:51:52.063Z - normal: Destination /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile
+2020-02-22T10:51:52.064Z - normal: Delete /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/subpackages/**/*,/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/**/*
+2020-02-22T10:51:52.150Z - error: Build Failed: Error: EINVAL: invalid argument, rmdir '/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/src/assets/scripts'
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/lib/builder/index.js:1:3815
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:52:16
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:696:30
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:167:37
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:1209:30
