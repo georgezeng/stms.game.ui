@@ -208,7 +208,14 @@ cc.Class({
 									}
 								}
 							});
-						} 
+						} else if (player.status == 'Exit') {
+							labels[1].string = '得分: ' + player.amount;
+							labels[2].string = '已退出';
+							sprites.map((sprite, index) => {
+								common.loadCardImg(sprite, 'back');
+								sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
+							});
+						}
 					}
 					let calculated = common.getValue('calculated');
 					if (calculated == 'false') {
@@ -238,6 +245,7 @@ cc.Class({
 							labels[2].string = '已退出';
 							sprites.map((sprite, index) => {
 								common.loadCardImg(sprite, 'back');
+								sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
 							});
 						} else {
 							let isCurrentPlayer = player.nickname == _this.nickname;
