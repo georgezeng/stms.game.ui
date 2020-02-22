@@ -31,7 +31,8 @@ cc.Class({
 		xSpeed: 150,
 		minRotation: -40,
 		maxRotation: 40,
-		endX: 0
+		endX: 0,
+		startTime: 0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -48,17 +49,19 @@ cc.Class({
 	},
 
     update (dt) {
-		if(this.node.angle * -1 < this.maxRotation) {
-			this.node.angle -= this.rSpeed * dt;
-			this.node.x += this.xSpeed * dt;
-			this.updateY();
-		} else {
-			this.node.angle = -this.maxRotation
-			if(this.endX > 0) {
-				this.node.x = this.endX;
+		this.startTime += dt;
+		if (this.startTime > 1) {
+			if(this.node.angle * -1 < this.maxRotation) {
+				this.node.angle -= this.rSpeed * dt;
+				this.node.x += this.xSpeed * dt;
 				this.updateY();
+			} else {
+				this.node.angle = -this.maxRotation
+				if(this.endX > 0) {
+					this.node.x = this.endX;
+					this.updateY();
+				}
 			}
 		}
-		
 	},
 });
