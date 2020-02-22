@@ -28,26 +28,27 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-		flipped: 'true',
+		flipCard: {
+			default: null,
+			type: cc.Sprite
+		},
     },
 
     // LIFE-CYCLE CALLBACKS:
 	
     onLoad () {
-		let _this = this;
-		this.node.on('click', function ( button ) {
-			let serverUrl = common.getValue("serverEndPoint")
-			let nickname = common.getValue("nickname")
-			let roomNumber = common.getValue("roomNumber")
-			$.get(serverUrl + "lockCards/" + roomNumber + "/" + nickname + '/true', function(data) {
-				if (data.code == 1) {
-					alert(data.msgs[0]);
-				} else {
-					button.interactable = false;
-					common.setParameter('flipped', _this.flipped)
-				}
-			});
-		});
+		this.node.on(cc.Node.EventType.TOUCH_MOVE, this.move, this);
+	},
+
+    move ( target ) {
+		let delta = target.getDelta();
+		this.node.y += delta.y;
+		if (this.flipCard.node.y - this.node.y > 100) {
+			common.setParameter('flipped', 'true');
+			this.node.y = this.flipCard.node.y;
+			this.node.active = false;
+			this.flipCard.node.active = false;
+		}
 	},
 
     start () {

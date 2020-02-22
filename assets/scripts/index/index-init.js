@@ -40,6 +40,7 @@ cc.Class({
     	cc.director.setClearColor(cc.color(4, 148, 44, 1));
 		// common.setParameter("serverEndPoint", "http://localhost:8081/");
 		common.setParameter('autoStart', 'false');
+		common.setParameter('flipped', 'false');
 		common.setParameter("serverEndPoint", "/");
     },
 

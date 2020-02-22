@@ -477,3 +477,367 @@
 2020-02-22T07:12:32.434Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
 2020-02-22T07:12:32.479Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template/index.html
 2020-02-22T07:12:32.496Z - normal: Built to "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile" successfully
+2020-02-22T08:59:27.857Z - failed: [db-task][sync-changes] Failed to import asset /Users/georgezeng/work/git/private/game/stms/stms.game.ui/assets/scripts/play/play-flip.js, message: Compile error: SyntaxError: /Users/georgezeng/work/git/private/game/stms/stms.game.ui/assets/scripts/play/play-flip.js: Unexpected token, expected , (46:4)
+  44 | 	}
+  45 | 
+> 46 |     start () {
+     |     ^
+  47 | 		
+  48 |     },
+  49 | 
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
+    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1749:33)
+    at Parser.pp$3.parseObj (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3978:12)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3719:19)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
+2020-02-22T09:00:42.708Z - failed: [db-task][sync-changes] Failed to import asset /Users/georgezeng/work/git/private/game/stms/stms.game.ui/assets/scripts/play/play-flip.js, message: Compile error: SyntaxError: /Users/georgezeng/work/git/private/game/stms/stms.game.ui/assets/scripts/play/play-flip.js: Unexpected token, expected , (45:4)
+  43 | 	}
+  44 | 
+> 45 |     start () {
+     |     ^
+  46 | 		
+  47 |     },
+  48 | 
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
+    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1749:33)
+    at Parser.pp$3.parseObj (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3978:12)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3719:19)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
+2020-02-22T09:34:56.417Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": ""
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "buildPath": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build",
+  "debug": false,
+  "dest": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": ""
+  },
+  "mac": {
+    "packageName": ""
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "scenes": [
+    "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+    "25e7a3be-38b5-4ff0-a441-211dea43b7b7",
+    "6f6a4ea9-e85a-4618-9e1e-53213ef9d5ac"
+  ],
+  "sourceMaps": false,
+  "startScene": "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+  "template": "link",
+  "title": "stms",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "landscape",
+  "win32": {},
+  "xxteaKey": "8e39808a-4326-4f",
+  "zipCompressJs": true,
+  "project": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui",
+  "projectName": "stms",
+  "debugBuildWorker": false
+}
+2020-02-22T09:34:56.418Z - normal: Building /Users/georgezeng/work/git/private/game/stms/stms.game.ui
+2020-02-22T09:34:56.418Z - normal: Destination /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile
+2020-02-22T09:34:56.419Z - normal: Delete /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/subpackages/**/*,/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/**/*
+2020-02-22T09:35:03.942Z - normal: Start building assets
+2020-02-22T09:35:03.942Z - normal: Start spawn build-worker
+2020-02-22T09:35:05.002Z - normal: Finish spawn build-worker
+2020-02-22T09:35:05.002Z - normal: Start init build-worker
+2020-02-22T09:35:09.039Z - normal: Finish init build-worker
+2020-02-22T09:35:09.040Z - normal: Start build-assets in worker
+2020-02-22T09:35:10.184Z - normal: Finish build-assets in worker
+2020-02-22T09:35:10.187Z - normal: Finish building assets
+2020-02-22T09:35:10.212Z - normal: Start building plugin scripts
+2020-02-22T09:35:11.936Z - normal: Finish building plugin scripts
+2020-02-22T09:35:11.952Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-02-22T09:35:11.963Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template/index.html
+2020-02-22T09:35:11.976Z - normal: Built to "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile" successfully
+2020-02-22T09:35:18.072Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": ""
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "buildPath": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build",
+  "debug": false,
+  "dest": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": ""
+  },
+  "mac": {
+    "packageName": ""
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "scenes": [
+    "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+    "25e7a3be-38b5-4ff0-a441-211dea43b7b7",
+    "6f6a4ea9-e85a-4618-9e1e-53213ef9d5ac"
+  ],
+  "sourceMaps": false,
+  "startScene": "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+  "template": "link",
+  "title": "stms",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "landscape",
+  "win32": {},
+  "xxteaKey": "8e39808a-4326-4f",
+  "zipCompressJs": true,
+  "project": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui",
+  "projectName": "stms",
+  "debugBuildWorker": false
+}
+2020-02-22T09:35:18.072Z - normal: Building /Users/georgezeng/work/git/private/game/stms/stms.game.ui
+2020-02-22T09:35:18.073Z - normal: Destination /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile
+2020-02-22T09:35:18.075Z - normal: Delete /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/subpackages/**/*,/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/**/*
+2020-02-22T09:35:24.921Z - normal: Start building assets
+2020-02-22T09:35:24.922Z - normal: Start spawn build-worker
+2020-02-22T09:35:25.911Z - normal: Finish spawn build-worker
+2020-02-22T09:35:25.911Z - normal: Start init build-worker
+2020-02-22T09:35:29.383Z - normal: Finish init build-worker
+2020-02-22T09:35:29.383Z - normal: Start build-assets in worker
+2020-02-22T09:35:30.517Z - normal: Finish build-assets in worker
+2020-02-22T09:35:30.519Z - normal: Finish building assets
+2020-02-22T09:35:30.539Z - normal: Start building plugin scripts
+2020-02-22T09:35:31.873Z - normal: Finish building plugin scripts
+2020-02-22T09:35:31.880Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-02-22T09:35:31.886Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template/index.html
+2020-02-22T09:35:31.900Z - normal: Built to "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile" successfully
+2020-02-22T09:41:03.252Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": ""
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "buildPath": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build",
+  "debug": false,
+  "dest": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": ""
+  },
+  "mac": {
+    "packageName": ""
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "scenes": [
+    "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+    "25e7a3be-38b5-4ff0-a441-211dea43b7b7",
+    "6f6a4ea9-e85a-4618-9e1e-53213ef9d5ac"
+  ],
+  "sourceMaps": false,
+  "startScene": "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+  "template": "link",
+  "title": "stms",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "landscape",
+  "win32": {},
+  "xxteaKey": "8e39808a-4326-4f",
+  "zipCompressJs": true,
+  "project": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui",
+  "projectName": "stms",
+  "debugBuildWorker": false
+}
+2020-02-22T09:41:03.253Z - normal: Building /Users/georgezeng/work/git/private/game/stms/stms.game.ui
+2020-02-22T09:41:03.253Z - normal: Destination /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile
+2020-02-22T09:41:03.254Z - normal: Delete /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/subpackages/**/*,/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/**/*
+2020-02-22T09:41:14.878Z - normal: Start building assets
+2020-02-22T09:41:14.879Z - normal: Start spawn build-worker
+2020-02-22T09:41:16.833Z - normal: Finish spawn build-worker
+2020-02-22T09:41:16.833Z - normal: Start init build-worker
+2020-02-22T09:41:23.108Z - normal: Finish init build-worker
+2020-02-22T09:41:23.108Z - normal: Start build-assets in worker
+2020-02-22T09:41:24.912Z - normal: Finish build-assets in worker
+2020-02-22T09:41:24.931Z - normal: Finish building assets
+2020-02-22T09:41:24.951Z - normal: Start building plugin scripts
+2020-02-22T09:41:26.779Z - normal: Finish building plugin scripts
+2020-02-22T09:41:26.794Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-02-22T09:41:26.814Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template/index.html
+2020-02-22T09:41:26.843Z - normal: Built to "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile" successfully
+2020-02-22T09:58:25.032Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": ""
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "buildPath": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build",
+  "debug": false,
+  "dest": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": ""
+  },
+  "mac": {
+    "packageName": ""
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "scenes": [
+    "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+    "25e7a3be-38b5-4ff0-a441-211dea43b7b7",
+    "6f6a4ea9-e85a-4618-9e1e-53213ef9d5ac"
+  ],
+  "sourceMaps": false,
+  "startScene": "80be7e83-d6a0-480d-8c9f-b8df5609a35f",
+  "template": "link",
+  "title": "stms",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "landscape",
+  "win32": {},
+  "xxteaKey": "8e39808a-4326-4f",
+  "zipCompressJs": true,
+  "project": "/Users/georgezeng/work/git/private/game/stms/stms.game.ui",
+  "projectName": "stms",
+  "debugBuildWorker": false
+}
+2020-02-22T09:58:25.033Z - normal: Building /Users/georgezeng/work/git/private/game/stms/stms.game.ui
+2020-02-22T09:58:25.033Z - normal: Destination /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile
+2020-02-22T09:58:25.034Z - normal: Delete /Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/subpackages/**/*,/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile/**/*
+2020-02-22T09:58:32.129Z - normal: Start building assets
+2020-02-22T09:58:32.130Z - normal: Start spawn build-worker
+2020-02-22T09:58:33.411Z - normal: Finish spawn build-worker
+2020-02-22T09:58:33.411Z - normal: Start init build-worker
+2020-02-22T09:58:39.084Z - normal: Finish init build-worker
+2020-02-22T09:58:39.085Z - normal: Start build-assets in worker
+2020-02-22T09:58:40.877Z - normal: Finish build-assets in worker
+2020-02-22T09:58:40.880Z - normal: Finish building assets
+2020-02-22T09:58:40.907Z - normal: Start building plugin scripts
+2020-02-22T09:58:42.984Z - normal: Finish building plugin scripts
+2020-02-22T09:58:43.023Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-02-22T09:58:43.036Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template/index.html
+2020-02-22T09:58:43.078Z - normal: Built to "/Users/georgezeng/work/git/private/game/stms/stms.game.ui/build/web-mobile" successfully

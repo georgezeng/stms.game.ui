@@ -64,11 +64,23 @@ cc.Class({
 			default: null,
 			type: cc.Button
 		},
+		flipBtn: {
+			default: null,
+			type: cc.Button
+		},
 		exitBtn: {
 			default: null,
 			type: cc.Button
 		},
 		room: null,
+		flipBackCard: {
+			default: null,
+			type: cc.Sprite
+		},
+		flipCard: {
+			default: null,
+			type: cc.Sprite
+		},
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -79,8 +91,8 @@ cc.Class({
 		this.serverUrl = common.getValue("serverEndPoint");
 		this.nickname = common.getValue("nickname");
 		this.roomNumber = common.getValue("roomNumber");
-		cc.director.setClearColor(cc.color(4, 148, 44, 255))
-		if(this.isHost == "false") {
+		cc.director.setClearColor(cc.color(4, 148, 44, 255));
+		if (this.isHost == "false") {
 			this.startBtn.target.destroy();
 			this.exitTxt.string = "退出房间";
 			this.roomNumberTxt.string = this.roomNumber;
@@ -93,7 +105,10 @@ cc.Class({
 		}
 		this.ghostCardNode.active = false;
 		this.notFillBtn.interactable = false;
+		this.flipBtn.interactable = false;
 		this.fillBtn.interactable = false;
+		this.flipCard.node.active = false;
+		this.flipBackCard.node.active = false;
 		let playerNodes = [];
 		var clearId = setInterval(function () {
 			$.get(_this.serverUrl + "getRoomInfo/" + _this.roomNumber, function( data ) {
@@ -105,6 +120,7 @@ cc.Class({
 				}
 				_this.fillBtn.interactable = false;
 				_this.notFillBtn.interactable = false;
+				_this.flipBtn.interactable = false;
 				if (isPlaying) {
 					common.loadCardImg(_this.ghostCardNode.getComponentInChildren(cc.Sprite), room.stage.extraGhost.name);
 				}
@@ -157,6 +173,7 @@ cc.Class({
 						if (player.status == 'Ready') {
 							_this.fillBtn.interactable = true;
 							_this.notFillBtn.interactable = true;
+							_this.flipBtn.interactable = true;
 						}
 					}
 					labels[1].string = '得分: ' + player.amount;
@@ -166,7 +183,11 @@ cc.Class({
 					playerNodes[len].destroy();
 					playerNodes.splice(len, 1);
 				}
-				if (lockCount == room.players.length && lockCount > 0) {
+				let lastPlayer = room.players[room.players.length - 1];
+				let isCurrentPlayer = lastPlayer ? lastPlayer.nickname == _this.nickname : false;
+				if (lastPlayer && (lastPlayer.cards.length == 2 || !isCurrentPlayer || isCurrentPlayer && lastPlayer.cards.length == 3 && common.getValue('flipped') == 'true') && lockCount == room.players.length && lockCount > 0) {
+					_this.flipCard.node.active = false;
+					_this.flipBackCard.node.active = false;
 					if (_this.isHost == 'true') {
 						_this.startBtn.interactable = true;
 					}
@@ -254,14 +275,20 @@ cc.Class({
 								let card = player.cards[index];
 								if (card) {
 									if (isCurrentPlayer) {
-										common.loadCardImg(sprite, card.name);
-										if (card.index == room.stage.extraGhost.index) {
-											sprite.node.getComponentInChildren(cc.Label).node.opacity = 255;
+										if (index == 2 && common.getValue('flipped') == 'false') {
+											common.loadCardImg(sprite, 'back');
+											common.loadCardImg(_this.flipCard, card.name);
+											_this.flipCard.node.active = true;
+											_this.flipBackCard.node.active = true;
+										} else {
+											common.loadCardImg(sprite, card.name);
+											if (card.index == room.stage.extraGhost.index) {
+												sprite.node.getComponentInChildren(cc.Label).node.opacity = 255;
+											}
 										}
 									} else {
 										common.loadCardImg(sprite, 'back');
 									}
-									
 								} else {
 									sprite.node.opacity = 0;
 								}
