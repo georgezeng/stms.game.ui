@@ -47,12 +47,12 @@ cc.Class({
 		});
 		setInterval(function() {
 			if (common.getValue('autoStart') == 'true') {
-				common.setParameter('autoStart', 'false');
 				startGame();
 			}
 		}, 1000);
 		
 		function startGame() {
+			common.setParameter('autoStart', 'false');
 			let serverUrl = common.getValue("serverEndPoint")
 			let nickname = common.getValue("nickname")
 			let roomNumber = common.getValue("roomNumber")

@@ -128,20 +128,23 @@ cc.Class({
 					}
 					let labels = playerNode.getComponentsInChildren(cc.Label);
 					let sprites = playerNode.getComponentsInChildren(cc.Sprite);
-					if (player.status == 'Exit') {
-						labels[1].string = '得分: ' + player.amount;
-						labels[2].string = '已退出';
-						sprites.map((sprite, index) => {
-							common.loadCardImg(sprite, 'back');
-						});
-						continue;
-					} 
+					
 					let isCurrentPlayer = player.nickname == _this.nickname;
 					if (isCurrentPlayer && player.status == 'Locked' && player.times != null) {
 						switch(player.times.priority) {
 							case 8: {
 								switch(player.times.value) {
 									case 1: labels[2].string = player.points + '点'; break;
+									default: labels[2].string = player.times.name + player.points;
+								}
+							} break;
+							case 2:
+							case 3:
+							case 6: {
+								switch(player.points) {
+									case 11: labels[2].string = player.times.name + 'J'; break;
+									case 12: labels[2].string = player.times.name + 'Q'; break;
+									case 13: labels[2].string = player.times.name + 'K'; break;
 									default: labels[2].string = player.times.name + player.points;
 								}
 							} break;
@@ -156,18 +159,6 @@ cc.Class({
 							_this.notFillBtn.interactable = true;
 						}
 					}
-					sprites.map((sprite, index) => {
-						let card = player.cards[index];
-						if (card) {
-							if (isCurrentPlayer) {
-								common.loadCardImg(sprite, card.name);
-							} else {
-								common.loadCardImg(sprite, 'back');
-							}
-						} else {
-							sprite.node.opacity = 0;
-						}
-					});
 					labels[1].string = '得分: ' + player.amount;
 				}
 				while (room.players.length < playerNodes.length) {
@@ -182,10 +173,10 @@ cc.Class({
 					_this.exitBtn.interactable = true;
 					for(let i in playerNodes) {
 						let player = room.players[i];
+						let playerNode = playerNodes[i];
+						let labels = playerNode.getComponentsInChildren(cc.Label);
+						let sprites = playerNode.getComponentsInChildren(cc.Sprite);
 						if (player.status == 'Locked') {
-							let playerNode = playerNodes[i];
-							let labels = playerNode.getComponentsInChildren(cc.Label);
-							let sprites = playerNode.getComponentsInChildren(cc.Sprite);
 							if (player.times != null) {
 								switch(player.times.priority) {
 									case 8: {
@@ -194,17 +185,30 @@ cc.Class({
 											default: labels[2].string = player.times.name + player.points;
 										}
 									} break;
+									case 2:
+									case 3:
+									case 6: {
+										switch(player.points) {
+											case 11: labels[2].string = player.times.name + 'J'; break;
+											case 12: labels[2].string = player.times.name + 'Q'; break;
+											case 13: labels[2].string = player.times.name + 'K'; break;
+											default: labels[2].string = player.times.name + player.points;
+										}
+									} break;
 									default: labels[2].string = player.times.name
 								}
 							}
 							sprites.map((sprite, index) => {
+								sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
 								let card = player.cards[index];
 								if (card) {
 									common.loadCardImg(sprite, card.name);
+									if (card.index == room.stage.extraGhost.index) {
+										sprite.node.getComponentInChildren(cc.Label).node.opacity = 255;
+									}
 								}
 							});
-						}
-						
+						} 
 					}
 					let calculated = common.getValue('calculated');
 					if (calculated == 'false') {
@@ -213,10 +217,45 @@ cc.Class({
 							$.get(_this.serverUrl + "calResult/" + _this.roomNumber + "/" + _this.nickname, function(data) {
 								if (data.code == 0) {
 									setTimeout(function() {
-										if (data.data == 'Calculated') {
-											common.setParameter('autoStart', 'true');
+										$.get(_this.serverUrl + "getRoomInfo/" + _this.roomNumber, function( data ) {
+											if (data.data.status == 'Calculated') {
+												// common.setParameter('autoStart', 'true');
+											}
+										});
+									}, 15 * 1000);
+								}
+							});
+						}
+					}
+				} else {
+					for(let i in playerNodes) {
+						let player = room.players[i];
+						let playerNode = playerNodes[i];
+						let labels = playerNode.getComponentsInChildren(cc.Label);
+						let sprites = playerNode.getComponentsInChildren(cc.Sprite);
+						if (player.status == 'Exit') {
+							labels[1].string = '得分: ' + player.amount;
+							labels[2].string = '已退出';
+							sprites.map((sprite, index) => {
+								common.loadCardImg(sprite, 'back');
+							});
+						} else {
+							let isCurrentPlayer = player.nickname == _this.nickname;
+							sprites.map((sprite, index) => {
+								sprite.node.getComponentInChildren(cc.Label).node.opacity = 0;
+								let card = player.cards[index];
+								if (card) {
+									if (isCurrentPlayer) {
+										common.loadCardImg(sprite, card.name);
+										if (card.index == room.stage.extraGhost.index) {
+											sprite.node.getComponentInChildren(cc.Label).node.opacity = 255;
 										}
-									}, 10 * 1000);
+									} else {
+										common.loadCardImg(sprite, 'back');
+									}
+									
+								} else {
+									sprite.node.opacity = 0;
 								}
 							});
 						}
