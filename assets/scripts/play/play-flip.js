@@ -42,9 +42,11 @@ cc.Class({
 
     move ( target ) {
 		let delta = target.getDelta();
+		this.node.x += delta.x;
 		this.node.y += delta.y;
-		if (this.flipCard.node.y - this.node.y > 100) {
+		if (this.flipCard.node.y - this.node.y > 100 || this.node.x - this.flipCard.node.x > 70) {
 			common.setParameter('flipped', 'true');
+			this.node.x = this.flipCard.node.x;
 			this.node.y = this.flipCard.node.y;
 			this.node.active = false;
 			this.flipCard.node.active = false;

@@ -53,14 +53,15 @@ cc.Class({
 			let nickname = _this.username.string.trim();
 			let serverUrl = common.getValue("serverEndPoint") + "joinRoom/" + roomNumber + "/" + nickname;
 			$.get(serverUrl, 
-				function (data) {
-					if (data.code == 0) {
-						common.setParameter("isHost", "false");
+				function (result) {
+					if (result.code == 0) {
+						common.setParameter("isHost", (result.data ? 'true' : 'false'));
 						common.setParameter("nickname", nickname);
 						common.setParameter("roomNumber", roomNumber);
+						common.setParameter("hostJoin", (result.data ? 'true' : 'false'));
 						cc.director.loadScene("play");
 					} else {
-						alert(data.msgs[0]);
+						alert(result.msgs[0]);
 					}
 				}
 			);

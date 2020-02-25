@@ -46,6 +46,7 @@ cc.Class({
 			} 
 			common.setParameter("isHost", "true");
 			common.setParameter("nickname", nickname);
+			common.setParameter("hostJoin", 'false');
 			cc.director.loadScene("play");
 		});
 	},

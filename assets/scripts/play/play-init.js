@@ -8,6 +8,7 @@
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 var common = require("common");
+var wsClient = require("websocket");
 
 cc.Class({
     extends: cc.Component,
@@ -81,6 +82,7 @@ cc.Class({
 			default: null,
 			type: cc.Sprite
 		},
+		playerNodesArr: []
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -96,12 +98,14 @@ cc.Class({
 			this.startBtn.target.destroy();
 			this.exitTxt.string = "退出房间";
 			this.roomNumberTxt.string = this.roomNumber;
-		} else {
+		} else if(common.getValue('hostJoin') == 'false') {
 			$.get(this.serverUrl + "createRoom/" + this.nickname, function( data ) {
 			  _this.roomNumber = data.data
 			  _this.roomNumberTxt.string = _this.roomNumber
 			  common.setParameter("roomNumber", _this.roomNumber)
 			});
+		} else {
+			this.roomNumberTxt.string = this.roomNumber;
 		}
 		this.ghostCardNode.active = false;
 		this.notFillBtn.interactable = false;
@@ -109,10 +113,10 @@ cc.Class({
 		this.fillBtn.interactable = false;
 		this.flipCard.node.active = false;
 		this.flipBackCard.node.active = false;
-		let playerNodes = [];
-		var clearId = setInterval(function () {
-			$.get(_this.serverUrl + "getRoomInfo/" + _this.roomNumber, function( data ) {
-				let room = data.data;
+		wsClient.connect(function (room) {
+			// $.get(_this.serverUrl + "getRoomInfo/" + _this.roomNumber, function( data ) {
+				// let room = data.data;
+				let playerNodes = _this.playerNodesArr;
 				let isPlaying = room.status == 'In' || room.status == 'Calculated';
 				_this.ghostCardNode.active = isPlaying;
 				if (isPlaying) {
@@ -133,6 +137,7 @@ cc.Class({
 					let playerNode = playerNodes[i];
 					if (!playerNode) {
 						playerNode = cc.instantiate(_this.playerTemplate);
+						playerNode.nickname = player.nickname;
 						playerNode.getComponentsInChildren(cc.Label)[0].string = player.nickname;
 						playerNode.y = _this.playerTemplate.y - (parseInt(i/2) * 110);
 						if (i % 2 == 1) {
@@ -182,10 +187,34 @@ cc.Class({
 					}
 					labels[1].string = '得分: ' + player.amount;
 				}
-				while (room.players.length < playerNodes.length) {
-					let len = playerNodes.length - 1;
-					playerNodes[len].destroy();
-					playerNodes.splice(len, 1);
+				let newPlayerNodes = [];
+				let remove = false;
+				for(let i in playerNodes) {
+					let playerNode = playerNodes[i];
+					let found = false;
+					for(let j in room.players) {
+						let player = room.players[j];
+						if (player.nickname == playerNode.nickname) {
+							newPlayerNodes.push(playerNode);
+							found = true;
+							remove = true;
+							break;
+						} 
+					}
+					if (!found) {
+						playerNode.destroy();
+					}
+				}
+				_this.playerNodesArr = newPlayerNodes;
+				playerNodes = newPlayerNodes;
+				if (remove) {
+					for(let i in playerNodes) {
+						let playerNode = playerNodes[i];
+						playerNode.y = _this.playerTemplate.y - (parseInt(i/2) * 110);
+						if (i % 2 == 1) {
+							playerNode.x = _this.playerTemplate.x + 400;
+						}
+					}
 				}
 				let lastPlayer = room.players[room.players.length - 1];
 				let isCurrentPlayer = lastPlayer ? lastPlayer.nickname == _this.nickname : false;
@@ -313,9 +342,14 @@ cc.Class({
 					clearInterval(common.getValue('clearId'));
 					cc.director.loadScene("result");
 				}
-			});
+			// });
+		});
+		var clearId = setInterval(function() {
+			// if (_this.isHost == 'true') {
+				wsClient.send();
+			// }
 		}, 1000);
-		common.setParameter('clearId', clearId);
+		// common.setParameter('clearId', clearId);
 	},
 
     start () {

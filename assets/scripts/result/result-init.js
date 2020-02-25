@@ -8,7 +8,7 @@
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 var common = require("common");
-
+var wsClient = require("websocket");
 cc.Class({
     extends: cc.Component,
 
@@ -46,7 +46,8 @@ cc.Class({
 		this.serverUrl = common.getValue("serverEndPoint");
 		this.nickname = common.getValue("nickname");
 		this.roomNumber = common.getValue("roomNumber");
-		cc.director.setClearColor(cc.color(4, 148, 44, 255))
+		cc.director.setClearColor(cc.color(4, 148, 44, 255));
+		wsClient.disconnect();
 		$.get(this.serverUrl + "getRoomInfo/" + this.roomNumber, function( data ) {
 			let room = data.data
 			for (let i in room.players) {

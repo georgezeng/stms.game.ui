@@ -8,7 +8,7 @@
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 var common = require("common");
-
+var wsClient = require("websocket");
 cc.Class({
     extends: cc.Component,
 
@@ -44,6 +44,7 @@ cc.Class({
 					if (data.code == 0) {
 						clearInterval(common.getValue('clearId'));
 						cc.director.loadScene("index");
+						wsClient.disconnect();
 					} else {
 						alert(data.msgs[0])
 					}
@@ -53,6 +54,7 @@ cc.Class({
 					if (data.code == 0) {
 						clearInterval(common.getValue('clearId'));
 						cc.director.loadScene("result");
+						wsClient.disconnect();
 					} else {
 						alert(data.msgs[0])
 					}

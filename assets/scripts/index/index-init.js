@@ -8,7 +8,7 @@
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 var common = require("common");
-
+var wsClient = require("websocket");
 cc.Class({
     extends: cc.Component,
 
@@ -38,8 +38,10 @@ cc.Class({
 
     onLoad () {
     	cc.director.setClearColor(cc.color(4, 148, 44, 1));
-		// common.setParameter("serverEndPoint", "http://localhost:8081/");
 		common.setParameter('autoStart', 'false');
+		common.setParameter("hostJoin", 'false');
+		// common.setParameter("serverEndPoint", "http://localhost:8081/");
+		// common.setParameter("serverEndPoint", "/s/");
 		common.setParameter("serverEndPoint", "/");
     },
 
