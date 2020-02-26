@@ -117,6 +117,9 @@ cc.Class({
 			// $.get(_this.serverUrl + "getRoomInfo/" + _this.roomNumber, function( data ) {
 				// let room = data.data;
 				let playerNodes = _this.playerNodesArr;
+				if (_this.isHost == 'true' && room.status == 'In') {
+					_this.startBtn.interactable = false;
+				} 
 				let isPlaying = room.status == 'In' || room.status == 'Calculated';
 				_this.ghostCardNode.active = isPlaying;
 				if (isPlaying) {
