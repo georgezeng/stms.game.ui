@@ -92,7 +92,7 @@ cc.Class({
 		this.isHost = common.getValue("isHost");
 		this.serverUrl = common.getValue("serverEndPoint");
 		this.nickname = common.getValue("nickname");
-		this.roomNumber = common.getValue("roomNumber");
+		this.roomNumber = '1'//common.getValue("roomNumber");
 		cc.director.setClearColor(cc.color(4, 148, 44, 255));
 		if (this.isHost == "false") {
 			this.startBtn.target.destroy();
